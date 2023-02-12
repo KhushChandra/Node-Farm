@@ -27,7 +27,7 @@ const data = fs.readFileSync(`${__dirname}/dev-data/data.json`,'utf-8');
 const dataObj = JSON.parse(data);
 
 const slugs = dataObj.map(el => slugify(el.productName, { lower: true}));
-console.log(slugs);
+// console.log(slugs);
 
 const Server = http.createServer((req, res) => {
    const {query, pathname} = url.parse(req.url,true);
@@ -71,6 +71,6 @@ else {
 //   res.end("Hello from the server!");
 
 });
-Server.listen(8000, "127.0.0.1", () => {
+Server.listen(9000, "127.0.0.1", () => {
   console.log("Listening to requests on port 8000 ");
 });
